@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const WeatherForm = (onChangeCity) => {
+const WeatherForm = ({onChangeCity}) => {
     const [city, setCity] = useState('london');
 
     const handleSubmit = (e) => {
