@@ -1,5 +1,12 @@
 .weatherContainer {
     width: 500px;
     height: 500px;
-    margin: 150px auto;
+    margin: 100px auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 20px;
 }
