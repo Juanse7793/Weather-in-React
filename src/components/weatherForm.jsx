@@ -1,7 +1,14 @@
 import { useState } from 'react';
 
 const WeatherForm = ({onChangeCity}) => {
-    const [city, setCity] = useState('london');
+    const [city, setCity] = useState('');
+
+    const onChange = (e) => {
+        const value = e.target.value;
+        if (value !== '') {
+            setCity(value);
+        }
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -9,7 +16,7 @@ const WeatherForm = ({onChangeCity}) => {
     }
 
     return <form onSubmit={handleSubmit}>
-        <input type="text" value={city} onChange={e => setCity(e.target.value)} />
+        <input type="text" onChange={onChange} />
     </form>
 }
 
