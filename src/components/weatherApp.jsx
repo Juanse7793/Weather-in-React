@@ -3,6 +3,7 @@ import WeatherForm from './weatherForm';
 import WeatherInfo from './weatherInfo';
 
 import styles from './weatherApp.module.css';
+import Loading from './loading';
 
 const WeatherApp = () => {
   const [weather, setWeather] = useState(null);
@@ -21,8 +22,9 @@ const WeatherApp = () => {
         `${process.env.REACT_APP_URL}key=${process.env.REACT_APP_KEY}&q=${city}&aqi=no`
       );
       const response = await request.json();
-      console.log(response);
-      setWeather(response);
+      setTimeout(() => {
+        setWeather(response);
+      }, 1000);
     } catch (error) {}
   };
 
@@ -33,9 +35,9 @@ const WeatherApp = () => {
 
   return (
     <div className={styles.weatherContainer}>
-        <h2 className={styles.title}>Weather App</h2>
+      <h2 className={styles.title}>Weather App</h2>
       <WeatherForm onChangeCity={handleChangeCity} />
-      <WeatherInfo weather={weather} />
+      {weather ? <WeatherInfo weather={weather} /> : <Loading /> }
     </div>
   );
 };
