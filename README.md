@@ -1,1 +1,1 @@
-# Wheather-in-React
+# Weather-in-React
