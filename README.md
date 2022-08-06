@@ -1,5 +1,7 @@
 # Weather-in-React
 
+<img src=imgs/rwdweather.png>
+
 In this app you can check the weather of your city
 
 take a look 
